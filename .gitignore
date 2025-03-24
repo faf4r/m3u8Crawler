@@ -1,0 +1,4 @@
+__pycache__/
+.vscode/
+*.m3u8
+# ts_temp/
