@@ -15,8 +15,8 @@ def get_video_urls(baseUrl):
     # var jsonData1=[];
     # //精切 花絮
     # var jsonData2=[];
-    # json_data = re.findall(r'var jsonData2=(\[.*?\])', html, re.S)[0] # 个别情况正片在花絮，如侠岚全集
-    json_data = re.findall(r'var jsonData1=(\[.*?\])', html, re.S)[0]   # 侠岚高清
+    # json_data = re.findall(r'var jsonData2=(.*?)</script>', html, re.S)[0] # 个别情况正片在花絮，如侠岚全集
+    json_data = re.findall(r"var jsonData1=(.*?)</script>", html, re.S)[0]  # 侠岚高清
     titles = re.findall(r"""['"]title['"]:['"](.*?)['"]""", json_data)
     urls = re.findall(r"""['"]url['"]:['"](.*?)['"]""", json_data)
     # print(name, titles, urls)
