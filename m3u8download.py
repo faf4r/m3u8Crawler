@@ -158,7 +158,7 @@ def download_m3u8_video_with_progressbar(m3u8_index_url, filename="output", outp
             return True
         except Exception as e:
             progress_bar.write(f"⚠️ 片段 {index} 下载失败: {str(e)}")
-            failed_segments.append(index, ts_url, segment)
+            failed_segments.append((index, ts_url, segment))
             return False
 
     with ThreadPoolExecutor(max_workers=os.cpu_count()) as executor:
